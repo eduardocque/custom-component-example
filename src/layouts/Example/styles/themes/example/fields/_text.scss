@@ -1,0 +1,30 @@
+@mixin formatic-text() {
+  border: var(--border);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  height: 42px;
+  padding: 9px 12px;
+  background-color: var(--color-white);
+  width: 100%;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.formatic-text {
+  @import "./label";
+
+  .formatic-text__input {
+    @include formatic-text();
+  }
+}
+
+.formatic-textarea {
+  @import "./label";
+
+  .formatic-textarea__textarea {
+    @include formatic-text();
+    height: auto;
+  }
+}

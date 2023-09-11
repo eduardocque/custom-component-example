@@ -1,0 +1,19 @@
+.formatic-digital-signature {
+  .formatic-digital-signature__canvas {
+    border: var(--border);
+  }
+
+  .formatic-digital-signature__footer {
+    display: flex;
+    margin-top: 1rem
+  }
+
+  .formatic-digital-signature__button--undo,
+  .formatic-digital-signature__button--reset {
+    @include formatic-button();
+  }
+
+  .formatic-digital-signature__button--reset {
+    margin-left: 16px;
+  }
+}

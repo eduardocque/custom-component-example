@@ -1,0 +1,377 @@
+.formatic {
+  .formatic-dropdown {
+    .ant-select-selection {
+      &:active,
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+
+  .formatic-repeatable {
+    .formatic-field-container {
+      width: 100%;
+    }
+  }
+
+  button {
+    outline: none !important;
+  }
+}
+
+$formatic-root-element: ".formatic";
+.formatic,
+.formatic--transformd {
+  // Validation icon
+  .formatic-field-container {
+    .formatic-field-valid {
+      & .formatic-dropdown__select::after,
+      &.formatic-text::after,
+      &.formatic-text__input-container.formatic-text::after,
+      &.formatic-password::after,
+      &.formatic-bsb__bank-container::after,
+      &.formatic-bsb__branch-container::after,
+      &.formatic-email::after,
+      &.formatic-textarea::after,
+      & .formatic-auto-complete::after,
+      & .formatic-checkbox-list__items-container::after,
+      & .formatic-date-picker__date-picker > div::after,
+      & .formatic-radio-list__items-container::after,
+      & .formatic-text::after,
+      & .formatic-sms-verification__phone-field-container::after,
+      & .formatic-email-verification__email-field-container::after,
+      &.formatic-electronic-verification__manual-verification-field-container::after {
+        color: var(--color-white);
+      }
+
+      .formatic-date-picker__normal::after {
+        @extend %success-tick;
+        color: var(--color-white);
+        top: 36.5px;
+      }
+    }
+
+    .formatic-field-error {
+      .formatic-date-picker__normal::after {
+        @extend %error-tick;
+        color: var(--color-white);
+        top: 36.5px;
+      }
+    }
+  }
+
+  .formatic-ev-component {
+    .formatic-field-valid {
+      .formatic-dropdown__select::after {
+        content: none;
+      }
+
+      &.formatic-electronic-verification__manual-verification-field-container {
+        &::after {
+          color: var(--color-white);
+          top: 51.5px;
+          right: 6.5px;
+          // content: none;
+        }
+      }
+    }
+  }
+
+  .formatic-search-input.formatic-text {
+    &::after {
+      content: none !important;
+    }
+  }
+
+  .formatic-text__input-container.formatic-text {
+    position: relative;
+
+    &::after {
+      top: 6.5px !important;
+      bottom: auto;
+    }
+  }
+
+  .formatic-field-container .formatic-date-picker__date-picker > div::after,
+  .formatic-auto-complete::after,
+  .formatic-email-verification__email::after,
+  .formatic-sms-verification__phone-field-container::after,
+  .formatic-email-verification__email-field-container::after {
+    top: 6.5px;
+  }
+
+  // .formatic-field-container .formatic-text::after,
+  // .formatic-field-container .formatic-password::after,
+  // .formatic-field-container .formatic-email::after,
+  // .formatic-electronic-verification__manual-verification-field-container::after {
+  //   top: 36.5px;
+  //   bottom: auto;
+  // }
+
+  .formatic-field-container .formatic-dropdown__select::after {
+    top: 6.5px;
+    bottom: auto !important;
+  }
+
+  .formatic-field-container__field {
+    .formatic-email-verification {
+      .formatic-error-message {
+        position: relative;
+      }
+    }
+  }
+
+  .formatic-bsb__branch-container::after {
+    bottom: calc(50% - 29.135px);
+  }
+
+  .formatic-digital-signature {
+    .formatic-digital-signature__button--reset {
+      margin-left: 15px;
+    }
+  }
+
+  // End Validation Icon
+
+  .textarea-scroll {
+    overflow-y: auto;
+    height: 400px;
+    background-color: lighten(lightgray, 12.5%);
+    padding: 15px;
+  }
+
+  .formatic-input-symbol-usd-dollar {
+    input[type="text"],
+    input[type="text"]:focus {
+      padding-left: 3.75rem;
+    }
+
+    .formatic-dropdown__select:before,
+    .formatic-text:before {
+      content: "USD$";
+      background-color: var(--color-primary);
+      top: 30.75px;
+      height: 38px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      color: var(--color-white);
+      font-size: 1rem;
+      line-height: 2.5rem;
+      width: 3.25rem;
+      overflow: hidden;
+      position: absolute;
+      text-align: center;
+    }
+  }
+
+  .formatic-input-symbol-dollar {
+    .formatic-text:before,
+    .formatic-dropdown__select:before {
+      background-color: var(--color-primary);
+    }
+  }
+
+  .formatic-with-help-text__question-mark {
+    color: var(--color-primary);
+  }
+
+  .formatic-checkbox-list__checkbox-item-label
+    [type="checkbox"]:checked
+    + .formatic-checkbox-list__checkbox-item-checkmark
+    .formatic-checkbox-list__checkbox-item-checkmark--checked:before {
+    color: var(--color-primary);
+  }
+
+  .formatic-checkbox-list__checkbox-item-label
+    [type="checkbox"]:checked
+    + .formatic-checkbox-list__checkbox-item-checkmark {
+    border-color: var(--color-primary);
+  }
+
+  .formatic-abn-lookup__container
+    .formatic-search-option__input:checked
+    + .formatic-search-option__label:before {
+    background-color: var(--color-primary);
+  }
+
+  .formatic-input-symbol-aud-dollar {
+    input[type="text"],
+    input[type="text"]:focus {
+      padding-left: 3.75rem;
+    }
+
+    .formatic-dropdown__select:before,
+    .formatic-text:before {
+      content: "AUD$";
+      background-color: var(--color-primary);
+      top: 30.75px;
+      height: 38px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      color: var(--color-white);
+      font-size: 1rem;
+      line-height: 2.5rem;
+      width: 3.25rem;
+      overflow: hidden;
+      position: absolute;
+      text-align: center;
+    }
+  }
+
+  .formatic-button:not(.formatic-action-bar-root__back),
+  .formatic-ev-component .formatic-electronic-verification__button,
+  .formatic-digital-signature__button--undo,
+  .formatic-digital-signature__button--reset,
+  .formatic-email-verification__change-email-button,
+  .formatic-email-verification__send-button,
+  .formatic-email-verification__verify-button,
+  .formatic-search__button {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    border: unset;
+    &:hover,
+    &.formatic-button-list__button--selected {
+      background-color: #00968c;
+      border: unset;
+      color: var(--color-white);
+    }
+  }
+
+  .formatic-button.formatic-action-bar-root__back {
+    &:hover {
+      background-color: var(--color-primary);
+      border: var(--border);
+    }
+  }
+
+  .formatic-button.formatic-action-bar-root__next,
+  .formatic-button.formatic-action-bar-root__submit {
+    &:hover {
+      background-color: #ff774d;
+      border-color: #ff774d;
+    }
+  }
+
+  .formatic-button-root-message {
+    background-color: var(--color-primary);
+  }
+
+  .formatic-file-upload {
+    .ant-upload-list-item-info {
+      & > span {
+        display: flex;
+        align-items: center;
+
+        .anticon-paper-clip {
+          position: inherit;
+          margin-right: 5px;
+          top: auto;
+        }
+      }
+    }
+  }
+
+  .formatic-ev-component {
+    .ev-skip-template-info-icon:after {
+      color: var(--color-primary);
+    }
+  }
+
+  .formatic-review-table .formatic-review-table-section__label {
+    background-color: var(--color-primary);
+  }
+
+  .formatic-date-picker {
+    .formatic-date-picker__date-picker.ant-calendar-picker {
+      position: absolute;
+      width: 50px;
+      right: 0;
+      top: 29px;
+
+      input,
+      .ant-calendar-picker-clear {
+        display: none;
+      }
+
+      .ant-calendar-picker-icon {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .formatic-digital-signature {
+    .formatic-digital-signature__button--reset {
+      margin-left: 15px;
+    }
+  }
+}
+
+.formatic-with-help-text__popover .ant-popover-inner {
+  background-color: var(--color-primary);
+}
+
+// .formatic--transformd .formatic-field-container__field .formatic-error-message {
+//   position: relative;
+// }
+
+.formatic--transformd .formatic-bsb .formatic-bsb__bsb-container,
+.formatic--transformd .formatic-bsb .formatic-bsb__bank-container,
+.formatic--transformd .formatic-bsb .formatic-bsb__branch-container {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 1200px) {
+  .formatic--transformd .formatic-field-container[data-renderer="abnLookup"] {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .formatic--transformd .formatic-field-container[data-renderer="abnLookup"] {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .formatic--transformd .formatic-field-container[data-renderer="abnLookup"] {
+    width: 100%;
+  }
+}
+
+@media (min-width: 576px) {
+  .formatic--transformd .formatic-field-container[data-renderer="abnLookup"] {
+    width: 100%;
+  }
+}
+
+// Override hardcoded form inputs.
+input.form-control .formatic input:not([type]),
+input.form-control .formatic [type=date],
+input.form-control .formatic [type=email],
+input.form-control .formatic [type=number],
+input.form-control .formatic [type=password],
+input.form-control .formatic [type=tel],
+input.form-control .formatic [type=text],
+input.form-control .formatic [type=url],
+textarea.form-control select.form-control .formatic input:not([type]),
+textarea.form-control select.form-control .formatic [type=date],
+textarea.form-control select.form-control .formatic [type=email],
+textarea.form-control select.form-control .formatic [type=number],
+textarea.form-control select.form-control .formatic [type=password],
+textarea.form-control select.form-control .formatic [type=tel],
+textarea.form-control select.form-control .formatic [type=text],
+textarea.form-control select.form-control .formatic [type=url],
+.formatic input:not([type]),
+.formatic [type=date],
+.formatic [type=email],
+.formatic [type=number],
+.formatic [type=password],
+.formatic [type=tel],
+.formatic [type=text],
+.formatic [type=url],
+.formatic .formatic-dropdown__select.ant-select {
+  border-color: var(--color-border) !important;
+  border-width: 1px !important;
+  border-radius: 0 !important;
+}

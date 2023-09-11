@@ -1,0 +1,44 @@
+image: node:11.4.0-alpine
+
+before_script:
+  - echo '@transformd-ltd:registry=https://npm.pkg.github.com/' >> .npmrc
+  - echo '//npm.pkg.github.com/:_authToken=${GITHUB_NPM_TOKEN}' >> .npmrc
+  # - "which ssh-agent || apt-get install openssh-client -y"
+  # - eval $(ssh-agent -s)
+  # - ssh-add <(echo "$SSH_PRIVATE_KEY")
+  # - mkdir -p ~/.ssh
+  # - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  # - "ssh-keyscan -H git-scm.co >> ~/.ssh/known_hosts"
+
+pages:
+  stage: deploy
+  script:
+    - yarn
+    - yarn build
+    - rm -rf public
+    - mv build public
+  artifacts:
+    paths:
+      - public
+  only:
+    - gitlab-pages-deploy
+
+# build:
+#   stage: build
+#   script:
+#     - apt-get update && apt-get -y install git
+#     - yarn
+#     - yarn build
+#     - mkdir deployment
+#     - cd deployment
+#     - git clone $DDO_DEPLOYMENT_REPO master
+#     - cd master
+#     - rm -rf *
+#     - mv ../../build/* ./
+#     - git config --global user.email "developer@formcorp.com.au"
+#     - git config --global user.name "Formcorp CI"
+#     - git add -A
+#     - 'git commit -m"$CI_COMMIT_SHA: build"'
+#     - git push -f origin master
+#   only:
+#     - master

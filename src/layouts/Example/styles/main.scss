@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+// Default Example colour scheme.
+:root {
+  --color-primary: #ff4200;
+  --color-secondary: #eafaf8;
+  --color-white: #ffffff;
+  --color-black: #191919;
+  --color-border: #e2e4e5;
+  --color-label: var(--color-black);
+  --color-table: var(--color-secondary);
+
+  --border: 1px solid var(--color-border);
+  --font-family: "Open Sans", sans-serif;
+  --font-size: 16px;
+}
+
+// Anjett colour scheme.
+.brand-anjett {
+  --color-primary: #dd4e50;
+  --color-secondary: #a1cad0;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-border: var(--color-secondary);
+  --color-label: var(--color-black);
+  --color-table: var(--color-secondary);
+
+  --border: 1px solid var(--color-border);
+}
+
+// Emerald Travel colour scheme.
+.brand-emerald-travel {
+  --color-primary: #0E2749;
+  --color-secondary: #E6E7E9;
+  --color-white: #ffffff;
+  --color-black: #14677B;
+  --color-border: var(--color-black);
+  --color-label: var(--color-white);
+  --color-table: var(--color-primary);
+
+  --border: 1px solid var(--color-border);
+}
+
+$max-width-md: (
+  sm: 100%,
+  md: 100%,
+  lg: 100%,
+  xl: 100%
+);
+
+// small
+$max-width-sm: (
+  sm: 100%,
+  md: 100%,
+  lg: 100%,
+  xl: 100%
+);
+
+$label-font-weight: 700;
+
+// Transformd Fields
+$input-color: var(--color-black);
+$ant-spin-text-color: var(--color-black);
+$form-loading-color: var(--color-black);
+$body-color: var(--color-black);
+$component-navigation-next-border-radius: 0;
+
+// vendor elements
+@import "@transformd-ltd/theme-fermi/src/main.scss";
+@import "@transformd-ltd/abn-lookup/main.scss";
+@import "@transformd-ltd/electronic-verification/main.scss";
+
+@import "./themes/example/index";
+@import "./reboot";
+@import "./layout";
+@import "./vendor/index";
+@import "./elements/index";
+@import "react-datepicker/src/stylesheets/datepicker.scss";

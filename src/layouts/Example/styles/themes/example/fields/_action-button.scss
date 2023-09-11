@@ -1,0 +1,27 @@
+.formatic-action-button {
+  .formatic-button {
+    @include formatic-button();
+  }
+}
+
+&.formatic-action-back {
+  .formatic-action-button {
+    .formatic-button {
+      font-size: 18px;
+      line-height: 24px;
+      height: 50px;
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+
+      &::before {
+        content: none;
+      }
+
+      &:hover {
+        background-color: var(--color-primary);
+        border: none;
+        color: var(--color-white);
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.formatic--transformd .formatic-review-table {
+  .formatic-review-table-item-advanced__row {
+    .formatic-review-table-item__label {
+      padding: 0 0.5rem 0 0;
+    }
+  }
+
+  .formatic-review-table-item__5c1b19c521060f00ce0973d0 {
+    .formatic-review-table-item-advanced__row-container {
+      display: none;
+    }
+
+    div[class~="formatic-review-table-item-advanced__row-container-abn.result.abn"],
+    div[class~="formatic-review-table-item-advanced__row-container-abn.result.entityName"] {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@mixin formatic-button() {
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: bold;
+  min-height: 42px;
+  height: auto;
+  color: var(--color-black);
+  border: var(--border);
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 2px 10px;
+  justify-content: center;
+
+  &:hover,
+  &:focus {
+    box-shadow: none;
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    border-radius: 0;
+    text-decoration: none;
+  }
+
+  &:disabled {
+    color: #53575a;
+    opacity: 0.8;
+  }
+}
+
+.formatic-button {
+  @include formatic-button();
+}
+
+.formatic-button-list {
+  .formatic-button-list__button-item-container .formatic-button-list__button {
+    @include formatic-button();
+
+    &:hover,
+    &.formatic-button-list__button--selected {
+      background-color: transparent;
+      border: 1px solid var(--color-primary);
+      color: var(--color-primary);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .formatic-button-list {
+    .formatic-button-list__button-item-container {
+      margin-right: 0;
+
+      .formatic-button-list__button {
+        width: 100%;
+      }
+    }
+  }
+}
