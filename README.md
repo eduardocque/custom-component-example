@@ -9,7 +9,7 @@ to install the dependencies
 
 the files will be stored under the folder build-assets that include 2 html files as example about how to use the library generated
 
-**Note: if during the build process you get an error, please switch to node 10**
+**Note: if during the build process you get an error, please switch to node 14**
 
 # React Scripts
 

@@ -14,12 +14,12 @@ const params = ParamsFromURL();
 let data = new Data();
 
 const config = {
-  formId: 1174,
-  apiKey: "8d49e9573aDF1b0075cF65bD20A6cB6D8eA1A8108ccC9E15d763554AFf14C784",
+  formId: 1181,
+  apiKey: "1aE867802244457ec49889FA5d1C9972AC8bFc3d20D0921f67Fc514E0e8c1072",
   channel: "master",
   config: "default",
   theme: "transformd",
-  environment: "Staging",
+  environment: "Live",
   initialValues: {},
 };
 
@@ -36,8 +36,6 @@ ReactDOM.render(
     environment={get(params, "env", config.environment)}
     submissionId={get(params, "id")}
     data={data}
-    params={params}
-    imgPath={window.location.href.split(/[?#]/)[0] + 'img/'}
   />,
   document.getElementById("formatic")
 );

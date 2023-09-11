@@ -1,5 +1,5 @@
 // Packages
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import ElectronicVerification from "@transformd-ltd/electronic-verification";
 import AbnLookupComponent from "@transformd-ltd/abn-lookup";
 import { Overrides, Events } from "@transformd-ltd/sdk";
@@ -8,6 +8,7 @@ import PropTypes from "prop-types";
 // Relatives
 import MainLayout from "./layouts/Example";
 import Formatic from "./components/Formatic";
+import CustomComponentExample from "./components/CustomComponentExample";
 
 const formProps = {
   apiServerUrl: "https://api.transformd.com",
@@ -46,6 +47,13 @@ const App = (props) => {
     };
   }, [data]);
 
+  const navigateToPage = useCallback(
+    (pageId) => {
+      data.navigateToPage(pageId);
+    },
+    [data]
+  );
+
   return (
     <div className={`page-id-${pageClassId}`}>
       <MainLayout>
@@ -73,6 +81,11 @@ const App = (props) => {
             <Overrides.OverrideFieldContainer
               type="electronicVerification"
               component={ElectronicVerification}
+            />
+            <Overrides.OverrideFieldContainer
+              type="customComponentExample"
+              component={CustomComponentExample}
+              navigateToPage={navigateToPage}
             />
           </Formatic>
         </div>

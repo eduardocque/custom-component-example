@@ -38,8 +38,6 @@ function createForm(
       initialValues={initialValues}
       submissionId={get(params, "id")}
       data={data}
-      params={params}
-      imgPath="./assets/"
     />
   );
 
